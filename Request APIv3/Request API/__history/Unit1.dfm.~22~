@@ -1,0 +1,97 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 595
+  ClientWidth = 803
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 69
+    Width = 137
+    Height = 13
+    Caption = 'Nenhum arquivo selecionado'
+  end
+  object Image1: TImage
+    Left = 8
+    Top = 119
+    Width = 674
+    Height = 457
+    Stretch = True
+  end
+  object Button2: TButton
+    Left = 688
+    Top = 551
+    Width = 75
+    Height = 25
+    Caption = 'POST'
+    TabOrder = 0
+    OnClick = Button2Click
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 8
+    Top = 24
+    Width = 305
+    Height = 21
+    EditLabel.Width = 38
+    EditLabel.Height = 13
+    EditLabel.Caption = 'API Key'
+    TabOrder = 1
+    Text = '41WKl27htUSkNqzGfEoOc-GTTjLoxIYrNOlk-raJp0s2'
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 88
+    Width = 137
+    Height = 25
+    Caption = 'Selecionar Imagem'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object RESTClient1: TRESTClient
+    ContentType = 'application/x-www-form-urlencoded'
+    Params = <>
+    HandleRedirects = True
+    Left = 600
+    Top = 64
+  end
+  object RESTRequest1: TRESTRequest
+    Accept = 'application/json, text/json, application/xml, text/xml'
+    Client = RESTClient1
+    Method = rmPOST
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 672
+    Top = 104
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 736
+    Top = 136
+  end
+  object OAuth2Authenticator1: TOAuth2Authenticator
+    ResponseType = rtTOKEN
+    TokenType = ttBEARER
+    Left = 680
+    Top = 16
+  end
+  object FileOpenDialog1: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Images'
+        FileMask = '*.jpg'
+      end>
+    Options = []
+    Left = 464
+    Top = 168
+  end
+end

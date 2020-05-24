@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/08/16 10:47:00.000.491,=C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/16 10:47:41.000.982,E:\Edesoft\Exemplos\Delphi\Request API\Unit1.pas=C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/16 10:47:41.000.982,E:\Edesoft\Exemplos\Delphi\Request API\Unit1.dfm=C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/08/16 10:47:43.000.101,E:\Edesoft\Exemplos\Delphi\Request API\Project1.dproj=C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/08/16 10:48:36.000.519,=E:\Edesoft\Exemplos\Delphi\Request API\Unit2.pas</Transaction>
+    <Transaction>2018/08/16 10:48:47.000.924,E:\Edesoft\Exemplos\Delphi\Request API\RestRequest.pas=E:\Edesoft\Exemplos\Delphi\Request API\Unit2.pas</Transaction>
+    <Transaction>2018/08/16 10:56:28.000.262,E:\Edesoft\Exemplos\Delphi\Request API\RestRequest.pas=</Transaction>
+    <Transaction>2018/10/19 05:52:05.000.852,=E:\Exemplos\Request API\Recognize.pas</Transaction>
+    <Transaction>2018/10/19 06:00:34.000.885,=E:\Exemplos\Request API\Unit2.pas</Transaction>
+    <Transaction>2018/10/19 09:45:55.000.856,C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\AppWatson.dproj=C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\Project1.dproj</Transaction>
+    <Transaction>2018/10/22 09:33:12.000.121,=E:\Exemplos\Request APIv2\Request APIv2\Request API\FacesUnit.pas</Transaction>
+    <Transaction>2018/10/22 09:33:16.000.351,=E:\Exemplos\Request APIv2\Request APIv2\Request API\Unit3.pas</Transaction>
+    <Transaction>2018/10/22 09:33:23.000.918,E:\Exemplos\Request APIv2\Request APIv2\Request API\Unit3.pas=E:\Exemplos\Request APIv2\Request APIv2\Request API\ToneUnit.pas</Transaction>
+    <Transaction>2018/10/22 19:03:31.000.753,C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj=C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv4\Request APIv2\Request API\AppWatson.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

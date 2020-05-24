@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CCBD4716-9DA1-41E8-A65C-F79F69709FA3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Request APIv2\Request API\AppWatsonImage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AppWatsonTone">
+        <MSBuild Projects="Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj"/>
+    </Target>
+    <Target Name="AppWatsonTone:Clean">
+        <MSBuild Projects="Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppWatsonTone:Make">
+        <MSBuild Projects="Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AppWatsonImage">
+        <MSBuild Projects="Request APIv2\Request API\AppWatsonImage.dproj"/>
+    </Target>
+    <Target Name="AppWatsonImage:Clean">
+        <MSBuild Projects="Request APIv2\Request API\AppWatsonImage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppWatsonImage:Make">
+        <MSBuild Projects="Request APIv2\Request API\AppWatsonImage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AppWatsonTone;AppWatsonImage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AppWatsonTone:Clean;AppWatsonImage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AppWatsonTone:Make;AppWatsonImage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

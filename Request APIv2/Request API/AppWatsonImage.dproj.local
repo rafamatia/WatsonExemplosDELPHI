@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/08/16 10:47:00.000.491,=C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/16 10:47:41.000.982,C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Edesoft\Exemplos\Delphi\Request API\Unit1.pas</Transaction>
+    <Transaction>2018/08/16 10:47:41.000.982,C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Edesoft\Exemplos\Delphi\Request API\Unit1.dfm</Transaction>
+    <Transaction>2018/08/16 10:47:43.000.101,C:\Users\Daniel\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Edesoft\Exemplos\Delphi\Request API\Project1.dproj</Transaction>
+    <Transaction>2018/08/16 10:48:36.000.519,=E:\Edesoft\Exemplos\Delphi\Request API\Unit2.pas</Transaction>
+    <Transaction>2018/08/16 10:48:47.000.924,E:\Edesoft\Exemplos\Delphi\Request API\Unit2.pas=E:\Edesoft\Exemplos\Delphi\Request API\RestRequest.pas</Transaction>
+    <Transaction>2018/08/16 10:56:28.000.262,E:\Edesoft\Exemplos\Delphi\Request API\RestRequest.pas=</Transaction>
+    <Transaction>2018/10/19 05:52:05.000.852,=E:\Exemplos\Request API\Recognize.pas</Transaction>
+    <Transaction>2018/10/19 06:00:34.000.885,=E:\Exemplos\Request API\Unit2.pas</Transaction>
+    <Transaction>2018/10/19 09:45:55.000.856,C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\Project1.dproj=C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\AppWatson.dproj</Transaction>
+    <Transaction>2018/10/22 19:03:09.000.431,C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\AppWatsonImage.dproj=C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Request APIv2\Request API\AppWatson.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,142 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IPPeerClient, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope, System.IOUtils,
+  REST.Authenticator.OAuth, IdBaseComponent, IdComponent, IdTCPConnection,
+  IdTCPClient, IdHTTP, IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL,
+  IdSSLOpenSSL, System.JSON, Vcl.ExtCtrls, jpeg, Data.DB, Datasnap.DBClient;
+
+type
+  TForm1 = class(TForm)
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    Button2: TButton;
+    OAuth2Authenticator1: TOAuth2Authenticator;
+    LabeledEdit1: TLabeledEdit;
+    FileOpenDialog1: TFileOpenDialog;
+    Button1: TButton;
+    Label1: TLabel;
+    Image1: TImage;
+    cdsResult: TClientDataSet;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    procedure RestToDefaults;
+    function RequestToken(ApiKey: String): String;
+    procedure ProcessContent(JsonString: string);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses RestRequest, REST.Types, Recognize;
+
+function BytesToStr(abytes: tbytes): string;
+var
+  abyte: byte;
+begin
+   for abyte in abytes do
+   begin
+      Result := result + IntToStr(abyte) + ',';
+   end;
+   Result := '[' + Copy(Result, 1, Length(Result) - 1) + ']';
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  if (FileOpenDialog1.Execute) then
+  begin
+    Label1.Caption := FileOpenDialog1.FileName;
+    Image1.Picture.LoadFromFile(FileOpenDialog1.FileName);
+  end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  filePath: String;
+  ABytes: TBytes;
+  token: string;
+
+begin
+
+  token := RequestToken(LabeledEdit1.Text);
+
+  RestToDefaults;
+  RESTClient1.Authenticator := OAuth2Authenticator1;
+  RestClient1.BaseURL := 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19';
+  OAuth2Authenticator1.AccessToken := token;
+
+  filePath := Label1.Caption; //'E:\Exemplos\Request API\Win32\Debug\F02.jpg';
+  ABytes := TFile.ReadAllBytes(filePath);
+  RESTRequest1.Method := TRestRequestMethod.rmPOST;
+
+  RESTRequest1.Params.AddItem('images_file',ABytes, pkGETorPOST, [poDoNotEncode], ctIMAGE_JPEG);
+  RESTRequest1.Execute();
+  ProcessContent(RESTResponse1.Content);
+end;
+
+procedure TForm1.ProcessContent(JsonString: string);
+var
+  jsonOBJ: TRootClass;
+  img: TImagesClass;
+  classifier: TClassifiersClass;
+  classes: TClassesClass;
+begin
+  jsonOBJ := TRootClass.FromJsonString(JsonString);
+  for img in jsonOBJ.images do
+  begin
+    for classifier in img.classifiers do
+    begin
+
+    end;
+  end;
+end;
+
+function TForm1.RequestToken(ApiKey: String): String;
+var
+  strParams: string;
+  objResult: TJSONObject;
+begin
+  strParams := 'grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&response_type=cloud_iam&apikey=' + ApiKey;
+
+  RestToDefaults;
+
+  RESTClient1.BaseURL := 'https://iam.bluemix.net/identity/token';
+
+  RESTRequest1.Method := TRestRequestMethod.rmPOST;
+  RESTRequest1.AddAuthParameter('Authorization','Basic Yng6Yng=',TRESTRequestParameterKind.pkHTTPHEADER);
+  RESTRequest1.Body.Add(strParams,TRESTContentType.ctAPPLICATION_X_WWW_FORM_URLENCODED);
+
+  RESTRequest1.Execute();
+  objResult := RESTResponse1.JSONValue as TJSONObject;
+
+  result := objResult.Values['access_token'].value;
+
+end;
+
+procedure TForm1.RestToDefaults;
+begin
+  RESTRequest1.ResetToDefaults;
+  RESTClient1.ResetToDefaults;
+  RESTResponse1.ResetToDefaults;
+
+  RESTClient1.Authenticator := nil;
+  RESTClient1.ContentType := 'application/x-www-form-urlencoded';
+
+  RESTRequest1.Accept := 'application/json, text/json, application/xml, text/xml';
+  RESTRequest1.AcceptCharset := '';
+end;
+
+end.
