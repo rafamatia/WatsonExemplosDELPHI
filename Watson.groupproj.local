@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2018/10/22 19:03:42.000.738,C:\Users\AS-MANOEL\Desktop\Palestras\2018 - Embarcadero Conference\Exemplos\Watson.groupproj=C:\Users\AS-MANOEL\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
-  </Transactions>
-	<Default.Personality>
-		<Projects ActiveProject="C:\desenvolvimento\WatsonExemplos\Request APIv4\Request APIv2\Request API\AppWatsonTone.dproj"/>
-	</Default.Personality>
-</BorlandProject>
